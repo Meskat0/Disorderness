@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Meskat — Physics Hub</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Physics learning hub — notes, videos, blog and resources for undergraduate physics students." />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#57a7ff; --glass: rgba(255,255,255,0.03);
+      --radius:14px; --maxw:1100px; --gap:20px; color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial; background:linear-gradient(180deg,#071025 0%, #07172b 100%); color:#e6eef6}
+    a{color:var(--accent);text-decoration:none}
+    .container{max-width:var(--maxw);margin:32px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,#2b6cff,#7be3ff);display:flex;align-items:center;justify-content:center;font-weight:800;color:#00132a}
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{padding:8px 12px;border-radius:10px;font-weight:600}
+    nav a:hover{background:var(--glass)}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:28px}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:28px;box-shadow:0 6px 24px rgba(2,6,23,0.6)}
+    h1{margin:0 0 8px 0;font-size:28px}
+    p.lead{margin:0;color:var(--muted)}
+
+    /* quick links */
+    .quick{display:flex;gap:12px;margin-top:18px}
+    .btn{background:linear-gradient(90deg,var(--accent),#7be3ff);padding:10px 14px;border-radius:10px;color:#021123;font-weight:700}
+
+    /* cards */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);margin-top:28px}
+    .card{background:var(--card);border-radius:12px;padding:18px}
+    .card h3{margin:0 0 8px 0}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* blog list */
+    .blog-list{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .post{display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+    .post .meta{font-size:13px;color:var(--muted)}
+
+    /* video gallery */
+    .videos{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .video iframe{width:100%;height:200px;border-radius:10px;border:0}
+
+    footer{margin-top:36px;padding:20px;border-top:1px solid rgba(255,255,255,0.03);display:flex;justify-content:space-between;align-items:center}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .blog-list{grid-template-columns:1fr}
+      .videos{grid-template-columns:1fr}
+    }
+    @media (max-width:520px){
+      header{flex-direction:column;align-items:start}
+      nav{flex-wrap:wrap}
+      .grid{grid-template-columns:1fr}
+    }
+
+    /* small utilities */
+    .search{display:flex;gap:8px;align-items:center}
+    input[type=search]{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px 10px;border-radius:10px;color:inherit}
+    .tag{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-weight:600}
+    .about-me{display:flex;gap:12px;align-items:center}
+    .avatar{width:86px;height:86px;border-radius:14px;background:linear-gradient(135deg,#7be3ff,#2b6cff);display:flex;align-items:center;justify-content:center;color:#00132a;font-weight:800}
+
+    /* reading */
+    .post-content{line-height:1.6;color:#dceafc}
+    .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-weight:700}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">M</div>
+        <div>
+          <div style="font-weight:800">Meskat — Physics Hub</div>
+          <div class="muted" style="font-size:12px">Notes • Videos • Blog • Resources</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#blog">Blog</a>
+        <a href="#videos">Videos</a>
+        <a href="#resources">Resources</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="tag">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-card">
+          <h1>Welcome — Learn, Create & Share Physics</h1>
+          <p class="lead">Curated notes, short explanation videos, solved problems and research-ready resources for undergraduate physics students. Clean layout — fast to read on mobile.</p>
+          <div class="quick">
+            <a class="btn" href="#blog">Read Latest Blog</a>
+            <a class="btn" href="#videos">Watch Videos</a>
+          </div>
+
+          <div class="grid">
+            <div class="card">
+              <h3>Structured Notes</h3>
+              <p class="muted">Short, clear notes on classical mechanics, electromagnetism, QM and more. Markdown-ready.</p>
+            </div>
+            <div class="card">
+              <h3>Worked Problems</h3>
+              <p class="muted">Step-by-step solutions aimed at contest & exam prep.</p>
+            </div>
+            <div class="card">
+              <h3>Project & Research</h3>
+              <p class="muted">Guides on computational projects (Manim, Python, DFT setups).</p>
+            </div>
+          </div>
+        </div>
+
+        <aside style="width:100%;max-width:420px">
+          <div class="card">
+            <div class="about-me">
+              <div class="avatar">MA</div>
+              <div>
+                <strong>Md. Meskat Ali</strong>
+                <div class="muted">3rd-year Physics • JUST</div>
+              </div>
+            </div>
+            <hr style="border:none;height:1px;background:rgba(255,255,255,0.03);margin:14px 0">
+            <div>
+              <div class="muted">Quick facts</div>
+              <ul style="margin:8px 0 0 18px;color:var(--muted);">
+                <li>Teaches physics online & offline</li>
+                <li>Works with Manim, Python, LaTeX</li>
+                <li>Posts YouTube videos — embed them here</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="height:16px"></div>
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div style="font-weight:700">Subscribe</div>
+                <div class="muted" style="font-size:13px">Get new posts by email</div>
+              </div>
+              <div>
+                <a class="chip" href="mailto:youremail@example.com">Email Me</a>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- Blog Section -->
+      <section id="blog" style="margin-top:36px">
+        <div style="display:flex;justify-content:space-between;align-items:end">
+          <div>
+            <h2 style="margin:0">Latest Blog Posts</h2>
+            <div class="muted">Explanations, derivations and exam tips</div>
+          </div>
+          <div class="search">
+            <input id="searchInput" type="search" placeholder="Search posts..." oninput="renderPosts()" />
+          </div>
+        </div>
+
+        <div class="blog-list" id="postsContainer" style="margin-top:18px"></div>
+      </section>
+
+      <!-- Videos -->
+      <section id="videos" style="margin-top:36px">
+        <h2>Physics Videos</h2>
+        <div class="muted">Embedded YouTube videos for quick learning</div>
+        <div class="videos" id="videosContainer" style="margin-top:14px"></div>
+      </section>
+
+      <!-- Resources -->
+      <section id="resources" style="margin-top:36px">
+        <h2>Resources</h2>
+        <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:12px">
+          <div class="card"><h3>Cheat Sheets</h3><p class="muted">Downloadable PDFs (add yours to the repo).</p></div>
+          <div class="card"><h3>Tools</h3><p class="muted">Manim snippets, LaTeX templates, Python utilities.</p></div>
+          <div class="card"><h3>External</h3><p class="muted">Links to important papers & datasets.</p></div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" style="margin-top:36px">
+        <h2>Contact</h2>
+        <p class="muted">Want to collaborate or request a tutorial? Send me a message.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+          <a class="btn" href="mailto:youremail@example.com">Email</a>
+          <a class="btn" href="https://www.youtube.com/" target="_blank">YouTube</a>
+          <a class="btn" href="https://github.com/" target="_blank">GitHub</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="muted">© <span id="year"></span> Meskat — Physics Hub</div>
+      <div class="muted">Made with ❤️ • Mobile friendly</div>
+    </footer>
+  </div>
+
+  <script>
+    // ====== SAMPLE DATA ======
+    // Edit these arrays to update posts & videos. When you deploy on GitHub, edit the file in the repo.
+    const posts = [
+      {id:1,title:'A clean derivation of Lagrange equations (with examples)',date:'2025-07-01',excerpt:'Step-by-step derivation for constrained systems. Includes examples and exercises.',tags:['classical mechanics','lagrange'],content:'Full post content here...'},
+      {id:2,title:'Diffraction: Intuition, formulas and problems',date:'2025-06-10',excerpt:'From single-slit to Fresnel zones — clear visual explanation.',tags:['optics','diffraction'],content:'Full post content here...'},
+      {id:3,title:'Using Manim to visualize (a+b)^2 expansion',date:'2025-05-20',excerpt:'Create step-by-step animation of algebraic identities with ManimCE.',tags:['manim','math'],content:'Full post content here...'},
+    ];
+
+    const videos = [
+      {id:'dQw4w9WgXcQ',title:'Sample Video 1'},
+      {id:'9bZkp7q19f0',title:'Sample Video 2'}
+    ];
+
+    // ====== RENDER HELPERS ======
+    function createPostCard(post){
+      const div = document.createElement('div'); div.className='post';
+      div.innerHTML = `<div style="flex:1"><strong>${post.title}</strong><div class=\"meta muted\">${post.date} • ${post.tags.join(', ')}</div><p class=\"muted\">${post.excerpt}</p></div>`;
+      div.addEventListener('click', ()=> openPost(post));
+      return div;
+    }
+
+    function openPost(post){
+      // Simple modal-like full post using new window (keeps single file simple)
+      const w = window.open('', '_blank');
+      w.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>${post.title}</title><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap\" rel=\"stylesheet\"><style>body{background:#071025;color:#e6eef6;font-family:Inter;padding:20px}a{color:#57a7ff}</style></head><body><h1>${post.title}</h1><div style=\"color:#9aa4b2;margin-bottom:16px\">${post.date} • ${post.tags.join(', ')}</div><div style=\"line-height:1.7;color:#dceafc\">${post.content}</div><hr style=\"margin-top:24px\"><div><a href=\"${location.href}\">Back</a></div></body></html>`);
+      w.document.close();
+    }
+
+    function renderPosts(){
+      const q = document.getElementById('searchInput').value.toLowerCase();
+      const container = document.getElementById('postsContainer'); container.innerHTML='';
+      const filtered = posts.filter(p=> (p.title + p.excerpt + p.tags.join(' ')).toLowerCase().includes(q));
+      if(filtered.length===0) container.innerHTML='<div class="muted">No posts found. Edit the posts array in the HTML file to add posts.</div>';
+      filtered.forEach(p=> container.appendChild(createPostCard(p)));
+    }
+
+    function renderVideos(){
+      const c = document.getElementById('videosContainer'); c.innerHTML='';
+      videos.forEach(v=>{
+        const dv = document.createElement('div'); dv.className='video'; dv.innerHTML = `<div style=\"background:var(--card);padding:10px;border-radius:10px\"><iframe src=\"https://www.youtube.com/embed/${v.id}\" title=\"${v.title}\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe><div class=\"muted\" style=\"margin-top:8px\">${v.title}</div></div>`;
+        c.appendChild(dv);
+      });
+    }
+
+    // Initialize
+    document.getElementById('year').textContent = new Date().getFullYear();
+    renderPosts(); renderVideos();
+
+    // ====== Tips in console for editing ======
+    console.log('Edit the `posts` and `videos` arrays at the top of the HTML file to add content.');
+  </script>
+</body>
+</html>
